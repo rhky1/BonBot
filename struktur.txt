@@ -1,0 +1,49 @@
+discord-bot/
+│
+├── src/
+│   ├── index.js                # entry point
+│   ├── client.js               # init discord client
+│   │
+│   ├── config/
+│   │   ├── env.js              # env loader
+│   │   └── database.js         # mysql pool
+│   │
+│   ├── database/
+│   │   └── schema.sql          # mysql schema
+│   │
+│   ├── handlers/
+│   │   ├── commandHandler.js   # load slash commands
+│   │   └── eventHandler.js
+│   │
+│   ├── commands/
+│   │   ├── music/
+│   │   │   ├── play.js
+│   │   │   ├── skip.js
+│   │   │   └── stop.js
+│   │   │
+│   │   ├── moderation/
+│   │   │   ├── kick.js
+│   │   │   ├── ban.js
+│   │   │   └── warn.js
+│   │   │
+│   │   ├── economy/
+│   │   │   ├── balance.js
+│   │   │   └── daily.js
+│   │   │
+│   │   └── utility/
+│   │       ├── ping.js
+│   │       └── help.js
+│   │
+│   ├── events/
+│   │   ├── ready.js
+│   │   └── interactionCreate.js
+│   │
+│   ├── services/
+│   │   └── musicPlayer.js
+│   │
+│   └── utils/
+│       └── embed.js
+│
+├── .env
+├── package.json
+└── README.md
