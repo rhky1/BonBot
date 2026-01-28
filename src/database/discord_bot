@@ -1,0 +1,118 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jan 28, 2026 at 06:32 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `discord_bot`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guilds`
+--
+
+CREATE TABLE `guilds` (
+  `guild_id` bigint(20) NOT NULL,
+  `log_channel` bigint(20) DEFAULT NULL,
+  `anti_link` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `guilds`
+--
+
+INSERT INTO `guilds` (`guild_id`, `log_channel`, `anti_link`) VALUES
+(1394940284613427230, NULL, 1),
+(1409363397316706366, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` bigint(20) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `coins` bigint(20) DEFAULT NULL,
+  `xp` int(11) DEFAULT 0,
+  `level` int(11) DEFAULT 1,
+  `last_daily` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `coins`, `xp`, `level`, `last_daily`) VALUES
+(1114334184404701296, 'ulkhiaa', 600, 0, 1, '2026-01-08 17:28:44'),
+(1391015011371188356, 'ryndraa', 2100206293867276, 0, 1, '2026-01-08 16:43:37');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `warns`
+--
+
+CREATE TABLE `warns` (
+  `id` int(11) NOT NULL,
+  `guild_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `moderator_id` bigint(20) DEFAULT NULL,
+  `reason` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `username` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `guilds`
+--
+ALTER TABLE `guilds`
+  ADD PRIMARY KEY (`guild_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `warns`
+--
+ALTER TABLE `warns`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `warns`
+--
+ALTER TABLE `warns`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
