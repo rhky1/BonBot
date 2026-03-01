@@ -1,8 +1,13 @@
 module.exports = {
   TOKEN: process.env.TOKEN,
   CLIENT_ID: process.env.CLIENT_ID,
-  DB_HOST: process.env.DB_HOST,
-  DB_USER: process.env.DB_USER,
-  DB_PASS: process.env.DB_PASS,
-  DB_NAME: process.env.DB_NAME
+  MODERATOR_IDS: process.env.MODERATOR_IDS?.split(",") || [],
+  GUILD_ID: process.env.GUILD_ID,
+
+  DB: {
+    HOST: process.env.DB_HOST,
+    USER: process.env.DB_USER,
+    PASSWORD: process.env.DB_PASSWORD,
+    NAME: process.env.DB_NAME
+  }
 };
