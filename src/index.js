@@ -1,4 +1,3 @@
-require("./config/env");
 const client = require("./client");
 const commandHandler = require("./handlers/commandHandler");
 const eventHandler = require("./handlers/eventHandler");
