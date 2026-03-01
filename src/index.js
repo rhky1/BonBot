@@ -17,7 +17,11 @@ const { ActivityType } = require("discord.js");
     });
 
     await commandHandler(client);
-
+    console.log("MYSQLHOST:", process.env.MYSQLHOST);
+console.log("MYSQLUSER:", process.env.MYSQLUSER);
+console.log("MYSQLPASSWORD:", process.env.MYSQLPASSWORD);
+console.log("MYSQLDATABASE:", process.env.MYSQLDATABASE);
+console.log("MYSQLPORT:", process.env.MYSQLPORT);
     console.log(`🤖 Logged in as ${client.user.tag}`);
   });
 })();
